@@ -3,7 +3,7 @@
  *
  * \brief Component version header file
  *
- * Copyright (c) 2019 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
+ * Copyright (c) 2020 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
  *
  * \license_start
  *
@@ -43,7 +43,7 @@
 // The build number does not refer to the component, but to the build number
 // of the device pack that provides the component.
 //
-#define BUILD_NUMBER 346
+#define BUILD_NUMBER 351
 
 //
 // The COMPONENT_VERSION_STRING is a string (enclosed in ") that can be used for logging or embedding.
@@ -58,7 +58,7 @@
 //     "%Y-%m-%d %H:%M:%S"
 //
 //
-#define COMPONENT_DATE_STRING "2019-12-20 07:12:05"
+#define COMPONENT_DATE_STRING "2020-03-16 13:33:50"
 
 #endif/* #ifndef _COMPONENT_VERSION_H_INCLUDED */
 

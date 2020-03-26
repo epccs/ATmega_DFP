@@ -1,6 +1,6 @@
 /*****************************************************************************
  *
- * Copyright (C) 2019 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
+ * Copyright (C) 2020 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
  * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -4644,10 +4644,10 @@ IO Module Instances. Mapped to memory.
 #define TCA0_OVF_vect      _VECTOR(7)  /*  */
 #define TCA0_HUNF_vect_num  8
 #define TCA0_HUNF_vect      _VECTOR(8)  /*  */
-#define TCA0_LCMP0_vect_num  9
-#define TCA0_LCMP0_vect      _VECTOR(9)  /*  */
 #define TCA0_CMP0_vect_num  9
 #define TCA0_CMP0_vect      _VECTOR(9)  /*  */
+#define TCA0_LCMP0_vect_num  9
+#define TCA0_LCMP0_vect      _VECTOR(9)  /*  */
 #define TCA0_CMP1_vect_num  10
 #define TCA0_CMP1_vect      _VECTOR(10)  /*  */
 #define TCA0_LCMP1_vect_num  10
@@ -4940,6 +4940,10 @@ IO Module Instances. Mapped to memory.
 
 /* ========== Lock Bits ========== */
 #define __LOCK_BITS_EXIST
+#ifdef LOCKBITS_DEFAULT
+#undef LOCKBITS_DEFAULT
+#endif //LOCKBITS_DEFAULT
+#define LOCKBITS_DEFAULT  (0xc5)
 
 /* ========== Signature ========== */
 #define SIGNATURE_0 0x1E

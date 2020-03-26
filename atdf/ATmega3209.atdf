@@ -106,6 +106,9 @@
         <module id="I2100" name="CPU">
           <instance name="CPU">
             <register-group address-space="data" name="CPU" name-in-module="CPU" offset="0x0030"/>
+            <parameters>
+              <param name="CORE_VERSION" value="V4"/>
+            </parameters>
           </instance>
         </module>
         <module id="I2104" name="CPUINT">
@@ -457,11 +460,11 @@
         <interrupt index="4" module-instance="RTC" name="PIT"/>
         <interrupt index="5" module-instance="CCL" name="CCL"/>
         <interrupt index="6" module-instance="PORTA" name="PORT"/>
-        <interrupt index="7" module-instance="TCA0" name="OVF"/>
         <interrupt index="7" module-instance="TCA0" name="LUNF"/>
+        <interrupt index="7" module-instance="TCA0" name="OVF"/>
         <interrupt index="8" module-instance="TCA0" name="HUNF"/>
-        <interrupt index="9" module-instance="TCA0" name="LCMP0"/>
         <interrupt index="9" module-instance="TCA0" name="CMP0"/>
+        <interrupt index="9" module-instance="TCA0" name="LCMP0"/>
         <interrupt index="10" module-instance="TCA0" name="CMP1"/>
         <interrupt index="10" module-instance="TCA0" name="LCMP1"/>
         <interrupt index="11" module-instance="TCA0" name="CMP2"/>
