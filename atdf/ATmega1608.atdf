@@ -13,7 +13,7 @@
           <memory-segment exec="0" name="INTERNAL_SRAM" rw="RW" size="0x0800" start="0x3800" type="ram"/>
           <memory-segment exec="0" name="IO" rw="RW" size="0x1100" start="0x00000000" type="io"/>
           <memory-segment exec="0" name="LOCKBITS" pagesize="0x20" rw="RW" size="0x1" start="0x0000128A" type="lockbits"/>
-          <memory-segment exec="0" name="MAPPED_PROGMEM" pagesize="0x40" rw="R" size="0x4000" start="0x00004000" type="other"/>
+          <memory-segment exec="0" name="MAPPED_PROGMEM" pagesize="0x40" rw="RW" size="0x4000" start="0x00004000" type="other"/>
           <memory-segment exec="0" name="PROD_SIGNATURES" pagesize="0x40" rw="R" size="0x3D" start="0x00001103" type="signatures"/>
           <memory-segment exec="0" name="SIGNATURES" pagesize="0x40" rw="R" size="0x3" start="0x00001100" type="signatures"/>
           <memory-segment exec="0" name="USER_SIGNATURES" pagesize="0x20" rw="RW" size="0x20" start="0x00001300" type="user_signatures"/>
@@ -1390,21 +1390,21 @@
           <bitfield caption="CCL LUT3" mask="0x8" name="LUT3" rw="RW"/>
         </register>
         <register caption="Port Multiplexer EVSYS" initval="0x00" name="EVSYSROUTEA" offset="0x0" rw="RW" size="1">
-          <bitfield caption="Event Output 0" mask="0x1" name="EVOUT0" rw="RW"/>
-          <bitfield caption="Event Output 1" mask="0x2" name="EVOUT1" rw="RW"/>
-          <bitfield caption="Event Output 2" mask="0x4" name="EVOUT2" rw="RW"/>
-          <bitfield caption="Event Output 3" mask="0x8" name="EVOUT3" rw="RW"/>
-          <bitfield caption="Event Output 4" mask="0x10" name="EVOUT4" rw="RW"/>
-          <bitfield caption="Event Output 5" mask="0x20" name="EVOUT5" rw="RW"/>
+          <bitfield caption="Event Output A" mask="0x1" name="EVOUTA" rw="RW" values="PORTMUX_EVOUTA"/>
+          <bitfield caption="Event Output B" mask="0x2" name="EVOUTB" rw="RW" values="PORTMUX_EVOUTB"/>
+          <bitfield caption="Event Output C" mask="0x4" name="EVOUTC" rw="RW" values="PORTMUX_EVOUTC"/>
+          <bitfield caption="Event Output D" mask="0x8" name="EVOUTD" rw="RW" values="PORTMUX_EVOUTD"/>
+          <bitfield caption="Event Output E" mask="0x10" name="EVOUTE" rw="RW" values="PORTMUX_EVOUTE"/>
+          <bitfield caption="Event Output F" mask="0x20" name="EVOUTF" rw="RW" values="PORTMUX_EVOUTF"/>
         </register>
         <register caption="Port Multiplexer TCA" initval="0x00" name="TCAROUTEA" offset="0x4" rw="RW" size="1">
           <bitfield caption="Port Multiplexer TCA0" mask="0x7" name="TCA0" rw="RW" values="PORTMUX_TCA0"/>
         </register>
         <register caption="Port Multiplexer TCB" initval="0x00" name="TCBROUTEA" offset="0x5" rw="RW" size="1">
-          <bitfield caption="Port Multiplexer TCB0" mask="0x1" name="TCB0" rw="RW"/>
-          <bitfield caption="Port Multiplexer TCB1" mask="0x2" name="TCB1" rw="RW"/>
-          <bitfield caption="Port Multiplexer TCB2" mask="0x4" name="TCB2" rw="RW"/>
-          <bitfield caption="Port Multiplexer TCB3" mask="0x8" name="TCB3" rw="RW"/>
+          <bitfield caption="Port Multiplexer TCB0" mask="0x1" name="TCB0" rw="RW" values="PORTMUX_TCB0"/>
+          <bitfield caption="Port Multiplexer TCB1" mask="0x2" name="TCB1" rw="RW" values="PORTMUX_TCB1"/>
+          <bitfield caption="Port Multiplexer TCB2" mask="0x4" name="TCB2" rw="RW" values="PORTMUX_TCB2"/>
+          <bitfield caption="Port Multiplexer TCB3" mask="0x8" name="TCB3" rw="RW" values="PORTMUX_TCB3"/>
         </register>
         <register caption="Port Multiplexer TWI and SPI" initval="0x00" name="TWISPIROUTEA" offset="0x3" rw="RW" size="1">
           <bitfield caption="Port Multiplexer SPI0" mask="0x3" name="SPI0" rw="RW" values="PORTMUX_SPI0"/>
@@ -1417,6 +1417,20 @@
           <bitfield caption="Port Multiplexer USART3" mask="0xc0" name="USART3" rw="RW" values="PORTMUX_USART3"/>
         </register>
       </register-group>
+      <value-group caption="Event Output A select" name="PORTMUX_EVOUTA">
+        <value caption="EVOUT on PA2" name="DEFAULT" value="0x0"/>
+        <value caption="EVOUT on PA7" name="ALT1" value="0x1"/>
+      </value-group>
+      <value-group caption="Event Output C select" name="PORTMUX_EVOUTC">
+        <value caption="EVOUT on PC2" name="DEFAULT" value="0x0"/>
+      </value-group>
+      <value-group caption="Event Output D select" name="PORTMUX_EVOUTD">
+        <value caption="EVOUT on PD2" name="DEFAULT" value="0x0"/>
+        <value caption="EVOUT on PD7" name="ALT1" value="0x1"/>
+      </value-group>
+      <value-group caption="Event Output F select" name="PORTMUX_EVOUTF">
+        <value caption="EVOUT on PF2" name="DEFAULT" value="0x0"/>
+      </value-group>
       <value-group caption="Port Multiplexer TCA0 select" name="PORTMUX_TCA0">
         <value caption="TCA0 pins on PA[5:0]" name="PORTA" value="0x0"/>
         <value caption="TCA0 pins on PB[5:0]" name="PORTB" value="0x1"/>
@@ -1424,6 +1438,20 @@
         <value caption="TCA0 pins on PD[5:0]" name="PORTD" value="0x3"/>
         <value caption="TCA0 pins on PE[5:0]" name="PORTE" value="0x4"/>
         <value caption="TCA0 pins on PF[5:0]" name="PORTF" value="0x5"/>
+      </value-group>
+      <value-group caption="Port Multiplexer TCB0 select" name="PORTMUX_TCB0">
+        <value caption="WO on PA2" name="DEFAULT" value="0x0"/>
+        <value caption="WO on PF4" name="ALT1" value="0x1"/>
+      </value-group>
+      <value-group caption="Port Multiplexer TCB1 select" name="PORTMUX_TCB1">
+        <value caption="WO on PA3" name="DEFAULT" value="0x0"/>
+        <value caption="WO on PF5" name="ALT1" value="0x1"/>
+      </value-group>
+      <value-group caption="Port Multiplexer TCB2 select" name="PORTMUX_TCB2">
+        <value caption="WO on PC0" name="DEFAULT" value="0x0"/>
+      </value-group>
+      <value-group caption="Port Multiplexer TCB3 select" name="PORTMUX_TCB3">
+        <value caption="WO on PC1" name="ALT1" value="0x1"/>
       </value-group>
       <value-group caption="Port Multiplexer SPI0 select" name="PORTMUX_SPI0">
         <value caption="SPI0 on PA[7:4]" name="DEFAULT" value="0x0"/>

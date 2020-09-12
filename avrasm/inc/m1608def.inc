@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m1608def.inc
 ;* Title             : Register/Bit Definitions for the ATmega1608
-;* Created           : 2020-03-16 13:33
+;* Created           : 2020-08-31 08:40
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega1608
@@ -2812,18 +2812,18 @@
 .equ PORTMUX_LUT3_bp = 3                 ; CCL LUT3 bit position
 
 ; PORTMUX_EVSYSROUTEA masks
-.equ PORTMUX_EVOUT0_bm = 0x01            ; Event Output 0 bit mask
-.equ PORTMUX_EVOUT0_bp = 0               ; Event Output 0 bit position
-.equ PORTMUX_EVOUT1_bm = 0x02            ; Event Output 1 bit mask
-.equ PORTMUX_EVOUT1_bp = 1               ; Event Output 1 bit position
-.equ PORTMUX_EVOUT2_bm = 0x04            ; Event Output 2 bit mask
-.equ PORTMUX_EVOUT2_bp = 2               ; Event Output 2 bit position
-.equ PORTMUX_EVOUT3_bm = 0x08            ; Event Output 3 bit mask
-.equ PORTMUX_EVOUT3_bp = 3               ; Event Output 3 bit position
-.equ PORTMUX_EVOUT4_bm = 0x10            ; Event Output 4 bit mask
-.equ PORTMUX_EVOUT4_bp = 4               ; Event Output 4 bit position
-.equ PORTMUX_EVOUT5_bm = 0x20            ; Event Output 5 bit mask
-.equ PORTMUX_EVOUT5_bp = 5               ; Event Output 5 bit position
+.equ PORTMUX_EVOUTA_bm = 0x01            ; Event Output A bit mask
+.equ PORTMUX_EVOUTA_bp = 0               ; Event Output A bit position
+.equ PORTMUX_EVOUTB_bm = 0x02            ; Event Output B bit mask
+.equ PORTMUX_EVOUTB_bp = 1               ; Event Output B bit position
+.equ PORTMUX_EVOUTC_bm = 0x04            ; Event Output C bit mask
+.equ PORTMUX_EVOUTC_bp = 2               ; Event Output C bit position
+.equ PORTMUX_EVOUTD_bm = 0x08            ; Event Output D bit mask
+.equ PORTMUX_EVOUTD_bp = 3               ; Event Output D bit position
+.equ PORTMUX_EVOUTE_bm = 0x10            ; Event Output E bit mask
+.equ PORTMUX_EVOUTE_bp = 4               ; Event Output E bit position
+.equ PORTMUX_EVOUTF_bm = 0x20            ; Event Output F bit mask
+.equ PORTMUX_EVOUTF_bp = 5               ; Event Output F bit position
 
 ; PORTMUX_TCAROUTEA masks
 .equ PORTMUX_TCA0_gm = 0x07              ; Port Multiplexer TCA0 group mask
@@ -2885,6 +2885,20 @@
 .equ PORTMUX_USART31_bm = (1<<7)         ; Port Multiplexer USART3 bit 1 mask
 .equ PORTMUX_USART31_bp = 7              ; Port Multiplexer USART3 bit 1 position
 
+; Event Output A select
+.equ PORTMUX_EVOUTA_DEFAULT_gc = (0x00<<0) ; EVOUT on PA2
+.equ PORTMUX_EVOUTA_ALT1_gc = (0x01<<0)  ; EVOUT on PA7
+
+; Event Output C select
+.equ PORTMUX_EVOUTC_DEFAULT_gc = (0x00<<2) ; EVOUT on PC2
+
+; Event Output D select
+.equ PORTMUX_EVOUTD_DEFAULT_gc = (0x00<<3) ; EVOUT on PD2
+.equ PORTMUX_EVOUTD_ALT1_gc = (0x01<<3)  ; EVOUT on PD7
+
+; Event Output F select
+.equ PORTMUX_EVOUTF_DEFAULT_gc = (0x00<<5) ; EVOUT on PF2
+
 ; Port Multiplexer TCA0 select
 .equ PORTMUX_TCA0_PORTA_gc = (0x00<<0)   ; TCA0 pins on PA[5:0]
 .equ PORTMUX_TCA0_PORTB_gc = (0x01<<0)   ; TCA0 pins on PB[5:0]
@@ -2892,6 +2906,20 @@
 .equ PORTMUX_TCA0_PORTD_gc = (0x03<<0)   ; TCA0 pins on PD[5:0]
 .equ PORTMUX_TCA0_PORTE_gc = (0x04<<0)   ; TCA0 pins on PE[5:0]
 .equ PORTMUX_TCA0_PORTF_gc = (0x05<<0)   ; TCA0 pins on PF[5:0]
+
+; Port Multiplexer TCB0 select
+.equ PORTMUX_TCB0_DEFAULT_gc = (0x00<<0) ; WO on PA2
+.equ PORTMUX_TCB0_ALT1_gc = (0x01<<0)    ; WO on PF4
+
+; Port Multiplexer TCB1 select
+.equ PORTMUX_TCB1_DEFAULT_gc = (0x00<<1) ; WO on PA3
+.equ PORTMUX_TCB1_ALT1_gc = (0x01<<1)    ; WO on PF5
+
+; Port Multiplexer TCB2 select
+.equ PORTMUX_TCB2_DEFAULT_gc = (0x00<<2) ; WO on PC0
+
+; Port Multiplexer TCB3 select
+.equ PORTMUX_TCB3_ALT1_gc = (0x01<<3)    ; WO on PC1
 
 ; Port Multiplexer SPI0 select
 .equ PORTMUX_SPI0_DEFAULT_gc = (0x00<<0) ; SPI0 on PA[7:4]
@@ -3751,6 +3779,7 @@
 .equ USART_CHSIZE1_bp = 1                ; Character Size bit 1 position
 .equ USART_CHSIZE2_bm = (1<<2)           ; Character Size bit 2 mask
 .equ USART_CHSIZE2_bp = 2                ; Character Size bit 2 position
+; Masks for USART_CMODE already defined
 .equ USART_PMODE_gm = 0x30               ; Parity Mode group mask
 .equ USART_PMODE_gp = 4                  ; Parity Mode group position
 .equ USART_PMODE0_bm = (1<<4)            ; Parity Mode bit 0 mask
@@ -3893,6 +3922,12 @@
 .equ USART_NORMAL_CHSIZE_8BIT_gc = (0x03<<0) ; Character size: 8 bit
 .equ USART_NORMAL_CHSIZE_9BITL_gc = (0x06<<0) ; Character size: 9 bit read low byte first
 .equ USART_NORMAL_CHSIZE_9BITH_gc = (0x07<<0) ; Character size: 9 bit read high byte first
+
+; Communication Mode select
+.equ USART_NORMAL_CMODE_ASYNCHRONOUS_gc = (0x00<<6) ; Asynchronous Mode
+.equ USART_NORMAL_CMODE_SYNCHRONOUS_gc = (0x01<<6) ; Synchronous Mode
+.equ USART_NORMAL_CMODE_IRCOM_gc = (0x02<<6) ; Infrared Communication
+.equ USART_NORMAL_CMODE_MSPI_gc = (0x03<<6) ; Master SPI Mode
 
 ; Parity Mode select
 .equ USART_NORMAL_PMODE_DISABLED_gc = (0x00<<4) ; No Parity
