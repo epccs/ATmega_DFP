@@ -6,7 +6,7 @@
 ;* Number            : AVR000
 ;* File Name         : m4808def.inc
 ;* Title             : Register/Bit Definitions for the ATmega4808
-;* Created           : 2020-08-31 08:40
+;* Created           : 2020-10-30 11:10
 ;* Version           : 1.00
 ;* Support e-mail    : avr@atmel.com
 ;* Target MCU        : ATmega4808
@@ -4103,10 +4103,12 @@
 #define EEPROM_START 0x1400
 #define EEPROM_SIZE 0x0100
 #define EEPROM_END (0x1400 + 0x0100 - 1)
+#define EEPROM_PAGE_SIZE 0x40
 
 #define FUSES_START 0x1280
 #define FUSES_SIZE 0x000A
 #define FUSES_END (0x1280 + 0x000A - 1)
+#define FUSES_PAGE_SIZE 0x40
 
 #define INTERNAL_SRAM_START 0x2800
 #define INTERNAL_SRAM_SIZE 0x1800
@@ -4119,30 +4121,32 @@
 #define LOCKBITS_START 0x128A
 #define LOCKBITS_SIZE 0x0001
 #define LOCKBITS_END (0x128A + 0x0001 - 1)
+#define LOCKBITS_PAGE_SIZE 0x40
 
 #define MAPPED_PROGMEM_START 0x4000
 #define MAPPED_PROGMEM_SIZE 0xC000
 #define MAPPED_PROGMEM_END (0x4000 + 0xC000 - 1)
+#define MAPPED_PROGMEM_PAGE_SIZE 0x80
 
 #define PROD_SIGNATURES_START 0x1103
 #define PROD_SIGNATURES_SIZE 0x007D
 #define PROD_SIGNATURES_END (0x1103 + 0x007D - 1)
+#define PROD_SIGNATURES_PAGE_SIZE 0x80
 
 #define SIGNATURES_START 0x1100
 #define SIGNATURES_SIZE 0x0003
 #define SIGNATURES_END (0x1100 + 0x0003 - 1)
+#define SIGNATURES_PAGE_SIZE 0x80
 
 #define USER_SIGNATURES_START 0x1300
 #define USER_SIGNATURES_SIZE 0x0040
 #define USER_SIGNATURES_END (0x1300 + 0x0040 - 1)
+#define USER_SIGNATURES_PAGE_SIZE 0x40
 
 #define PROGMEM_START 0x0000
 #define PROGMEM_SIZE 0xC000
 #define PROGMEM_END (0x0000 + 0xC000 - 1)
-
-#define PROGMEM_START 0x0000
-#define PROGMEM_SIZE 0xC000
-#define PROGMEM_END (0x0000 + 0xC000 - 1)
+#define PROGMEM_PAGE_SIZE 0x80
 
 
 ; Legacy definitions

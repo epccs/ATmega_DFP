@@ -88,7 +88,7 @@
             </signals>
           </instance>
         </module>
-        <module id="I2600" name="CLKCTRL">
+        <module id="I2604" name="CLKCTRL">
           <instance name="CLKCTRL">
             <register-group address-space="data" name="CLKCTRL" name-in-module="CLKCTRL" offset="0x0060"/>
             <signals>
@@ -117,7 +117,7 @@
             <register-group address-space="data" name="CRCSCAN" name-in-module="CRCSCAN" offset="0x0120"/>
           </instance>
         </module>
-        <module id="I2600" name="EVSYS">
+        <module id="I2604" name="EVSYS">
           <instance name="EVSYS">
             <register-group address-space="data" name="EVSYS" name-in-module="EVSYS" offset="0x0180"/>
             <signals>
@@ -130,17 +130,17 @@
             </signals>
           </instance>
         </module>
-        <module id="I2600" name="FUSE">
+        <module id="I2604" name="FUSE">
           <instance name="FUSE">
             <register-group address-space="data" name="FUSE" name-in-module="FUSE" offset="0x1280"/>
           </instance>
         </module>
-        <module id="I2600" name="GPIO">
+        <module id="I2604" name="GPIO">
           <instance name="GPIO">
             <register-group address-space="data" name="GPIO" name-in-module="GPIO" offset="0x001C"/>
           </instance>
         </module>
-        <module id="I2600" name="LOCKBIT">
+        <module id="I2604" name="LOCKBIT">
           <instance name="LOCKBIT">
             <register-group address-space="data" name="LOCKBIT" name-in-module="LOCKBIT" offset="0x128A"/>
           </instance>
@@ -205,7 +205,7 @@
             </signals>
           </instance>
         </module>
-        <module id="I2600" name="PORTMUX">
+        <module id="I2604" name="PORTMUX">
           <instance name="PORTMUX">
             <register-group address-space="data" name="PORTMUX" name-in-module="PORTMUX" offset="0x05E0"/>
           </instance>
@@ -223,7 +223,7 @@
             <register-group address-space="data" name="RTC" name-in-module="RTC" offset="0x0140"/>
           </instance>
         </module>
-        <module id="I2600" name="SIGROW">
+        <module id="I2604" name="SIGROW">
           <instance name="SIGROW">
             <register-group address-space="data" name="SIGROW" name-in-module="SIGROW" offset="0x1100"/>
           </instance>
@@ -248,7 +248,7 @@
             </signals>
           </instance>
         </module>
-        <module id="I2600" name="SYSCFG">
+        <module id="I2604" name="SYSCFG">
           <instance name="SYSCFG">
             <register-group address-space="data" name="SYSCFG" name-in-module="SYSCFG" offset="0x0F00"/>
           </instance>
@@ -353,7 +353,7 @@
             </signals>
           </instance>
         </module>
-        <module id="I2603" name="USERROW">
+        <module id="I2604" name="USERROW">
           <instance name="USERROW">
             <register-group address-space="data" name="USERROW" name-in-module="USERROW" offset="0x1300"/>
           </instance>
@@ -378,7 +378,7 @@
             <register-group address-space="data" name="VPORTF" name-in-module="VPORT" offset="0x0014"/>
           </instance>
         </module>
-        <module id="I2600" name="VREF">
+        <module id="I2604" name="VREF">
           <instance name="VREF">
             <register-group address-space="data" name="VREF" name-in-module="VREF" offset="0x00A0"/>
           </instance>
@@ -868,7 +868,7 @@
         <value caption="RS Latch" name="RS" value="0x04"/>
       </value-group>
     </module>
-    <module caption="Clock controller" id="I2600" name="CLKCTRL">
+    <module caption="Clock controller" id="I2604" name="CLKCTRL">
       <register-group caption="Clock controller" name="CLKCTRL" size="0x20">
         <register caption="MCLK Control A" initval="0x00" name="MCLKCTRLA" offset="0x00" rw="RW" size="1">
           <bitfield caption="System clock out" mask="0x80" name="CLKOUT" rw="RW"/>
@@ -998,7 +998,7 @@
         <value caption="CRC on boot section of flash" name="BOOT" value="0x2"/>
       </value-group>
     </module>
-    <module caption="Event System" id="I2600" name="EVSYS">
+    <module caption="Event System" id="I2604" name="EVSYS">
       <register-group caption="Event System" name="EVSYS" size="0x40">
         <register caption="Multiplexer Channel 0" initval="0x00" name="CHANNEL0" offset="0x10" rw="RW" size="1">
           <bitfield caption="Generator selector" mask="0xff" name="GENERATOR" rw="RW" values="EVSYS_GENERATOR"/>
@@ -1160,7 +1160,7 @@
         <value caption="Connect user to event channel 5" name="CHANNEL5" value="0x6"/>
       </value-group>
     </module>
-    <module caption="Fuses" id="I2600" name="FUSE">
+    <module caption="Fuses" id="I2604" name="FUSE">
       <register-group caption="Fuses" name="FUSE" size="0x09">
         <register caption="Application Code Section End" initval="0x00" name="APPEND" offset="0x7" rw="RW" size="1"/>
         <register caption="BOD Configuration" initval="0x00" name="BODCFG" offset="0x1" rw="RW" size="1">
@@ -1260,7 +1260,7 @@
         <value caption="8K cycles (8.2s)" name="8KCLK" value="0x0B"/>
       </value-group>
     </module>
-    <module caption="General Purpose IO" id="I2600" name="GPIO">
+    <module caption="General Purpose IO" id="I2604" name="GPIO">
       <register-group caption="General Purpose IO" name="GPIO" size="0x4">
         <register caption="General Purpose IO Register 0" name="GPIOR0" offset="0x0" rw="RW" size="1"/>
         <register caption="General Purpose IO Register 1" name="GPIOR1" offset="0x1" rw="RW" size="1"/>
@@ -1268,7 +1268,7 @@
         <register caption="General Purpose IO Register 3" name="GPIOR3" offset="0x3" rw="RW" size="1"/>
       </register-group>
     </module>
-    <module caption="Lockbit" id="I2600" name="LOCKBIT">
+    <module caption="Lockbit" id="I2604" name="LOCKBIT">
       <register-group caption="Lockbit" name="LOCKBIT" size="0x2">
         <register caption="Lock Bits" initval="0xC5" name="LOCKBIT" offset="0x0" rw="RW" size="1">
           <bitfield caption="Lock Bits" mask="0xff" name="LB" rw="RW" values="LOCKBIT_LB"/>
@@ -1380,7 +1380,7 @@
         <value caption="Sense low Level" name="LEVEL" value="0x5"/>
       </value-group>
     </module>
-    <module caption="Port Multiplexer" id="I2600" name="PORTMUX">
+    <module caption="Port Multiplexer" id="I2604" name="PORTMUX">
       <register-group caption="Port Multiplexer" name="PORTMUX" size="0x10">
         <register caption="Port Multiplexer CCL" initval="0x00" name="CCLROUTEA" offset="0x1" rw="RW" size="1">
           <bitfield caption="CCL LUT0" mask="0x1" name="LUT0" rw="RW"/>
@@ -1597,7 +1597,7 @@
         <value caption="RTC Clock Cycles 32768" name="CYC32768" value="0x0E"/>
       </value-group>
     </module>
-    <module caption="Signature row" id="I2600" name="SIGROW">
+    <module caption="Signature row" id="I2604" name="SIGROW">
       <register-group caption="Signature row" name="SIGROW" size="0x40">
         <register caption="CRC Checksum Byte 1" name="CHECKSUM1" offset="0x2F" rw="R" size="1"/>
         <register caption="Device ID Byte 0" name="DEVICEID0" offset="0x00" rw="R" size="1"/>
@@ -1689,7 +1689,7 @@
         <value caption="SPI Mode 3" name="3" value="0x03"/>
       </value-group>
     </module>
-    <module caption="System Configuration Registers" id="I2600" name="SYSCFG">
+    <module caption="System Configuration Registers" id="I2604" name="SYSCFG">
       <register-group caption="System Configuration Registers" name="SYSCFG" size="0x20">
         <register caption="External Break" initval="0x00" name="EXTBRK" offset="0x02" rw="RW" size="1">
           <bitfield caption="External break enable" mask="0x1" name="ENEXTBRK" rw="RW"/>
@@ -2177,7 +2177,7 @@
         <value caption="25% tolerance" name="WDW3" value="0x3"/>
       </value-group>
     </module>
-    <module caption="User Row" id="I2603" name="USERROW">
+    <module caption="User Row" id="I2604" name="USERROW">
       <register-group caption="User Row" name="USERROW" size="0x20">
         <register caption="User Row Byte 0" name="USERROW0" offset="0x00" rw="RW" size="1"/>
         <register caption="User Row Byte 1" name="USERROW1" offset="0x01" rw="RW" size="1"/>
@@ -2255,7 +2255,7 @@
         <register caption="Output Value" name="OUT" offset="0x1" rw="RW" size="1"/>
       </register-group>
     </module>
-    <module caption="Voltage reference" id="I2600" name="VREF">
+    <module caption="Voltage reference" id="I2604" name="VREF">
       <register-group caption="Voltage reference" name="VREF" size="0x2">
         <register caption="Control A" initval="0x00" name="CTRLA" offset="0x0" rw="RW" size="1">
           <bitfield caption="AC0 reference select" mask="0x7" name="AC0REFSEL" rw="RW" values="VREF_AC0REFSEL"/>

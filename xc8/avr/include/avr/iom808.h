@@ -996,6 +996,32 @@ typedef struct PORTMUX_struct
     register8_t reserved_1[10];
 } PORTMUX_t;
 
+/* Event Output A select */
+typedef enum PORTMUX_EVOUTA_enum
+{
+    PORTMUX_EVOUTA_DEFAULT_gc = (0x00<<0),  /* EVOUT on PA2 */
+    PORTMUX_EVOUTA_ALT1_gc = (0x01<<0),  /* EVOUT on PA7 */
+} PORTMUX_EVOUTA_t;
+
+/* Event Output C select */
+typedef enum PORTMUX_EVOUTC_enum
+{
+    PORTMUX_EVOUTC_DEFAULT_gc = (0x00<<2),  /* EVOUT on PC2 */
+} PORTMUX_EVOUTC_t;
+
+/* Event Output D select */
+typedef enum PORTMUX_EVOUTD_enum
+{
+    PORTMUX_EVOUTD_DEFAULT_gc = (0x00<<3),  /* EVOUT on PD2 */
+    PORTMUX_EVOUTD_ALT1_gc = (0x01<<3),  /* EVOUT on PD7 */
+} PORTMUX_EVOUTD_t;
+
+/* Event Output F select */
+typedef enum PORTMUX_EVOUTF_enum
+{
+    PORTMUX_EVOUTF_DEFAULT_gc = (0x00<<5),  /* EVOUT on PF2 */
+} PORTMUX_EVOUTF_t;
+
 /* Port Multiplexer SPI0 select */
 typedef enum PORTMUX_SPI0_enum
 {
@@ -1015,6 +1041,32 @@ typedef enum PORTMUX_TCA0_enum
     PORTMUX_TCA0_PORTE_gc = (0x04<<0),  /* TCA0 pins on PE[5:0] */
     PORTMUX_TCA0_PORTF_gc = (0x05<<0),  /* TCA0 pins on PF[5:0] */
 } PORTMUX_TCA0_t;
+
+/* Port Multiplexer TCB0 select */
+typedef enum PORTMUX_TCB0_enum
+{
+    PORTMUX_TCB0_DEFAULT_gc = (0x00<<0),  /* WO on PA2 */
+    PORTMUX_TCB0_ALT1_gc = (0x01<<0),  /* WO on PF4 */
+} PORTMUX_TCB0_t;
+
+/* Port Multiplexer TCB1 select */
+typedef enum PORTMUX_TCB1_enum
+{
+    PORTMUX_TCB1_DEFAULT_gc = (0x00<<1),  /* WO on PA3 */
+    PORTMUX_TCB1_ALT1_gc = (0x01<<1),  /* WO on PF5 */
+} PORTMUX_TCB1_t;
+
+/* Port Multiplexer TCB2 select */
+typedef enum PORTMUX_TCB2_enum
+{
+    PORTMUX_TCB2_DEFAULT_gc = (0x00<<2),  /* WO on PC0 */
+} PORTMUX_TCB2_t;
+
+/* Port Multiplexer TCB3 select */
+typedef enum PORTMUX_TCB3_enum
+{
+    PORTMUX_TCB3_ALT1_gc = (0x01<<3),  /* WO on PC1 */
+} PORTMUX_TCB3_t;
 
 /* Port Multiplexer TWI0 select */
 typedef enum PORTMUX_TWI0_enum
@@ -3577,18 +3629,18 @@ IO Module Instances. Mapped to memory.
 
 /* PORTMUX - Port Multiplexer */
 /* PORTMUX.EVSYSROUTEA  bit masks and bit positions */
-#define PORTMUX_EVOUT0_bm  0x01  /* Event Output 0 bit mask. */
-#define PORTMUX_EVOUT0_bp  0  /* Event Output 0 bit position. */
-#define PORTMUX_EVOUT1_bm  0x02  /* Event Output 1 bit mask. */
-#define PORTMUX_EVOUT1_bp  1  /* Event Output 1 bit position. */
-#define PORTMUX_EVOUT2_bm  0x04  /* Event Output 2 bit mask. */
-#define PORTMUX_EVOUT2_bp  2  /* Event Output 2 bit position. */
-#define PORTMUX_EVOUT3_bm  0x08  /* Event Output 3 bit mask. */
-#define PORTMUX_EVOUT3_bp  3  /* Event Output 3 bit position. */
-#define PORTMUX_EVOUT4_bm  0x10  /* Event Output 4 bit mask. */
-#define PORTMUX_EVOUT4_bp  4  /* Event Output 4 bit position. */
-#define PORTMUX_EVOUT5_bm  0x20  /* Event Output 5 bit mask. */
-#define PORTMUX_EVOUT5_bp  5  /* Event Output 5 bit position. */
+#define PORTMUX_EVOUTA_bm  0x01  /* Event Output A bit mask. */
+#define PORTMUX_EVOUTA_bp  0  /* Event Output A bit position. */
+#define PORTMUX_EVOUTB_bm  0x02  /* Event Output B bit mask. */
+#define PORTMUX_EVOUTB_bp  1  /* Event Output B bit position. */
+#define PORTMUX_EVOUTC_bm  0x04  /* Event Output C bit mask. */
+#define PORTMUX_EVOUTC_bp  2  /* Event Output C bit position. */
+#define PORTMUX_EVOUTD_bm  0x08  /* Event Output D bit mask. */
+#define PORTMUX_EVOUTD_bp  3  /* Event Output D bit position. */
+#define PORTMUX_EVOUTE_bm  0x10  /* Event Output E bit mask. */
+#define PORTMUX_EVOUTE_bp  4  /* Event Output E bit position. */
+#define PORTMUX_EVOUTF_bm  0x20  /* Event Output F bit mask. */
+#define PORTMUX_EVOUTF_bp  5  /* Event Output F bit position. */
 
 /* PORTMUX.CCLROUTEA  bit masks and bit positions */
 #define PORTMUX_LUT0_bm  0x01  /* CCL LUT0 bit mask. */
